@@ -44,6 +44,15 @@ spawn(function()
 				}
 
 				game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ReincarnationRequest"):FireServer(unpack(args))
+
+				task.wait(.1)
+				
+				local args = {
+					[1] = "SECRETKEY7257"
+				}
+				
+				game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("AsReincarnationRequest"):FireServer(unpack(args))
+				
 			end
 		end)
 	end
