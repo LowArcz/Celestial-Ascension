@@ -1,7 +1,7 @@
-_G.AutoFarm = true
-_G.Breakthrough = true
-_G.AutoRebirth = true
-_G.AutoZone = true
+_G.AutoFarm = true -- AutoFarm
+_G.Breakthrough = true -- Auto Breakthrough(SuperFast)
+_G.AutoRebirth = true -- AutoReincarnation.
+_G.AutoZone = true -- Emperor Zone+ only.
 
 -- Made By x2Arcz
 
@@ -9,8 +9,8 @@ spawn(function()
 	while task.wait(.1) do
 		pcall(function()
 			if _G.AutoFarm == true then
-				local QI = game:GetService("Players").LocalPlayer.PlayerGui.Main.QIUI.Bars.Text
-				if QI == "Qi:0/0" then
+				local Qi = game:GetService("Players").LocalPlayer.Stats.Qi.Value
+				if Qi == 0 then
 					_G.Breakthrough = false
                     task.wait(.5)
 					local args = {
@@ -47,7 +47,7 @@ spawn(function()
 				game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ReincarnationRequest"):FireServer(unpack(args))
 
 				task.wait(.1)
-				
+
 				local args = {
 					[1] = "SECRETKEY7257"
 				}
