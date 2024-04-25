@@ -1,6 +1,7 @@
 _G.AutoFarm = true
 _G.Breakthrough = true
 _G.AutoRebirth = true
+_G.AutoZone = true
 
 -- Made By x2Arcz
 
@@ -55,6 +56,37 @@ spawn(function()
 				
 			end
 		end)
+	end
+end)
+
+
+spawn(function()
+	while task.wait(0.1) do
+		pcall(function()
+			if _G.AutoZone == true then
+				local Realm = game:GetService("Players").LocalPlayer.Stats.Realm.Value
+				if Realm == 20 then
+					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-6955, 48, -3369)
+                    task.wait(1)
+				end
+				if Realm == 25 then
+				    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-7346, 45, -3301)
+                    task.wait(1)
+				end
+				if Realm == 27 then
+					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-7661, 42, -2236)
+                    task.wait(1)
+				end
+				if Realm == 30 then
+					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-8132, 56, -2728)
+                    task.wait(1)
+				end
+				if Realm == 40 then
+					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-8242, 59, -2595)
+                    task.wait(1)		
+				end
+	     	end
+	    end)
 	end
 end)
 
