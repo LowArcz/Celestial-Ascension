@@ -1,0 +1,61 @@
+_G.AutoFarm = true
+_G.Breakthrough = true
+_G.AutoRebirth = true
+
+-- Made By x2Arcz
+
+spawn(function()
+	while task.wait(.1) do
+		pcall(function()
+			if _G.AutoFarm == true then
+				local QI = game:GetService("Players").LocalPlayer.PlayerGui.Main.QIUI.Bars.Text
+				if QI == "Qi:0/0" then
+					_G.Breakthrough = false
+                    task.wait(.5)
+					local args = {
+						[1] = true,
+						[2] = "SECRETKEY8146"
+					}
+
+					game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("IsCultivating"):FireServer(unpack(args))
+					task.wait(1)
+					local args = {
+						[1] = false,
+						[2] = "SECRETKEY8146"
+					}
+
+					game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("IsCultivating"):FireServer(unpack(args))
+                    task.wait(1)
+					_G.Breakthrough = true
+				end
+			end
+		end)
+	end
+end)
+
+
+spawn(function()
+	while task.wait(.1) do
+		pcall(function()
+			if _G.AutoRebirth == true then
+				local args = {
+					[1] = "SECRETKEY7805",
+					[2] = true
+				}
+
+				game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ReincarnationRequest"):FireServer(unpack(args))
+			end
+		end)
+	end
+end)
+
+
+while wait() do
+	if _G.Breakthrough == true then
+		local args = {
+			[1] = "SECRETKEY9545"
+		}
+
+		game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("BreakThrough"):FireServer(unpack(args))
+	end
+end
